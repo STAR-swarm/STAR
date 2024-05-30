@@ -1,0 +1,8 @@
+command_sequence: [
+  "takeoff", "wait", "all", "", "",
+  "hold", "wait", "all", "1.0", "",
+  "external", "wait", "cf4 cf8 cf13", "", "",
+  # "external", "wait", "cf14", "", "",
+  "hold", "wait", "all", "1.0", "",
+  "land", "wait", "all", "", ""
+]

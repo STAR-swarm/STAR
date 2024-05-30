@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+Copyright (C) 2018  Karl J. Obermeyer
+
+This file is part of VisiLibity v1.
+
+VisiLibity v1 is free software: you can redistribute it and/or modify it under
+the terms of the GNU Lesser General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+VisiLibity v1 is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+details.
+
+You should have received a copy of the GNU Lesser General Public License along
+with VisiLibity v1.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisiLibity1</title>
+  <meta name="author" content="Karl J. Obermeyer">
+  <meta name="description" content="Free open-source C++ library for visibility computations in planar polygonal environments.">
+  <meta name="keywords" content="computational geometry, visibility, visibility polygon, viewshed, isovist, visibility graph, euclidean shortest path">
+  <link rel="shortcut icon" href="favicons/o.ico">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="https://visilibity.org/">
+</head>
+
+
+<body>
+  <a id="home"></a>
+
+  <header>
+    <h1 id="title">VisiLibity1</h1>
+    <h3 id="subtitle">Planar Visibility Computations</h3>
+
+    <a href="./media/shortest_path_visibility_polygon_demo_MOUT.small.mov" target="_blank">
+      <img id="title-img" src="./media/visibility_polygon_example_small.png" alt="">
+    </a>
+
+    <!--nav id="primary-nav">
+      <div>
+        <a class="nav-item" href="#about">About</a>
+        <span class="nav-item-separator">|</span>
+        <a class="nav-item" href="#using">Using</a>
+        <span class="nav-item-separator">|</span>
+        <a class="nav-item" href="#help-and-contributions">Help&nbsp;&amp;&nbsp;Contributions</a>
+        <span class="nav-item-separator">|</span>
+        <a class="nav-item" href="#math">Math</a>
+      </div>
+      <div>
+        <a class="nav-item" href="#acknowledgements">Acknowledgements</a>
+        <span class="nav-item-separator">|</span>
+        <a class="nav-item" href="#license">License</a>
+        <span class="nav-item-separator">|</span>
+        <a class="nav-item" href="#links">Links</a>
+      </div>
+    </nav-->
+  </header>
+
+  <article id="about">
+    <h2 class="article-title">About</h2>
+    <p>
+      VisiLibity is a free open source C++ library for 2D floating-point
+      visibility algorithms, path planning, and supporting data types. It is
+      intended for use in robot and sensor network design software. Other
+      possible applications include, e.g., manufacturing, facility location,
+      architectural/urban planning, games, and education. The entire library
+      consists only of a single compilation unit (one <code>.hpp</code> + one
+      <code>.cpp</code> file) with no dependence on 3rd party libraries. It is
+      therefore suitable for applications where simple visibility and path
+      planning computations are needed but the power of a larger computational
+      geometry library is not necessary.
+    </p>
+    <p>
+      <b>Current Functionality of VisiLibity v1</b> in planar polygonal
+      environments with polygonal holes:
+    </p>
+    <ul>
+      <li>visibility polygons</li>
+      <li>visibility graphs</li>
+      <li>Euclidean shortest paths for a point</li>
+      <li>Python, Ruby, and Matlab bindings</li>
+    </ul>
+    <p>
+      Exact/arbitrary precision arithmetic is avoided and robustness is
+      achieved by considering 2 points to be colocated whenever the Euclidean
+      distance between them is less or equal to a user-defined tolerance
+      &epsilon; called the <em>robustness constant</em>.  If the robustness
+      constant is chosen poorly or the scale of environment features varies too
+      dramatically, library functions can and will return errors.  However,
+      provided the user tunes the robustness constant appropriately, we find
+      the library works well for a large range of useful environments.
+    </p>
+  </article>
+
+  <article id="using">
+    <h2 class="article-title">Using</h2>
+    <p>
+    	When possible, please <b>cite VisiLibity</b>.  For your convenience,
+    	here is a BibTeX item
+    </p>
+<pre>
+@Misc{VisiLibity1:2008,
+  author = {K. J. Obermeyer and Contributors},
+  title = {{VisiLibity}: A {C}++ Library for Visibility Computations in Planar
+    Polygonal Environments},
+  howpublished = {\url{http://www.VisiLibity.org}},
+  year = 2008,
+  note = {v1},
+}
+</pre>
+    <h3>C++</h3>
+    <p>
+    To use VisiLibity in your C++ program,<br>
+      &nbsp;&nbsp;1. Clone the <a href="https://github.com/karlobermeyer/VisiLibity1" target="_blank">git repo</a> and read <code>README.md</code>,<br>
+      &nbsp;&nbsp;2. Place an <code>#include "visilibity.hpp"</code> directive at the beginning of
+      your program, and<br>
+      &nbsp;&nbsp;3. Link your program with <code>visilibity.cpp</code> when compiling.<br>
+    </p>
+
+    <p>
+      Here is the <a href="./doxygen_html/index.html" target="_blank">source
+      code documentation</a>.
+    </p>
+
+    <h3>Python 2 and 3</h3>
+    <p>
+      From Linux or Mac terminal,
+    </p>
+<pre>
+$ pip install visilibity  # resp. pip3...
+$ python  # resp. python3
+>>> import visilibity
+>>> dir(visilibity)  # Ta da!
+</pre>
+    <p>
+      See more instructions on running a demo at <a
+      href="https://github.com/tsaoyu/PyVisiLibity" target="_blank">Yu Cao's
+      repo</a>. I've never used these bindings beyond confirming that the demo
+      works, so I can't answer questions about them. However, if you have
+      information you would like to share, esp. how you overcame difficulties,
+      let me know and I can post it to the FAQ or contributions notes.
+    </p>
+
+    <h3>Ruby</h3>
+    <p>
+      See constributions list below to download the SWIG interface. I've never
+      used these, so I can't answer questions about them. However, if you have
+      information you would like to share, esp. how you overcame difficulties,
+      let me know and I can post it to the FAQ or contributions notes.
+    </p>
+
+    <h3>Matlab</h3>
+    <p>
+      MEX files are included in `src/` on the main GitHub repository. See
+      contributions list below for notes on use under Windows.
+    </p>
+  </article>
+
+  <article id="help-and-contributions">
+    <h2 class="article-title">Help&nbsp;&amp;&nbsp;Contributions</h2>
+    <p>
+      To report a bug/bugfix or ask a question, send <a
+      href="https://karlobermeyer.github.io" target="_blank"><u>me</u></a> an
+      email with subject line of the form "VisiLibity1: ...". This project is
+      entirely volunteer work and I have many other demands on my time, so
+      please forgive slow responses. Be sure to check the <a
+      href="./use_notes/VisiLibity_FAQ.html" target="_blank"><b>FAQ</b></a>
+      before emailing a question. Other comments you have are also welcome,
+      e.g., on what your application is, overall architecture of the library, or
+      possible future functionality.
+    </p>
+
+    <table>
+      <tr class="title-tr"><th>Contribution</th><th>Thanks to</th></tr>
+      <tbody>
+
+      	<tr><td><a href="https://github.com/tsaoyu/PyVisiLibity" target="_blank"><b>Python Bindings with Example</b></a></td><td><a href="http://www.southampton.ac.uk/~yc6n13/" target="_blank">Yu Cao</a> of U. of Southampton, UK; Stefanie T. of MIT, United States; Ramiro C. of UNC, Argentina
+      	<tr><td><a href="http://github.com/madriska/visilibity-ruby/tree/master" target="_blank"><b>Ruby Bindings</b></a></td><td>Brad E. of Madriska Media Group, United States
+      	<tr><td><a href="./use_notes/VisiLibity_Matlab_Windows.notes.txt"
+      	  target="_blank"><b>Notes on Matlab Interface under
+      	  Windows</b></a> </td> <td>Lu L. of TUM, Germany; Bruno H. of CMU, United States
+      	<tr><td><a href="./use_notes/VisiLibity_FAQ.html"
+      	  target="_blank"><b>Compiling with MS Visual Studio</b></a></td><td>Derek K. of AFRL, United States
+      	<tr><td><a href="./use_notes/VisiLibity_FAQ.html" target="_blank"><b>Using a 64-bit Machine</b></a>
+      	  </td><td>Claus C. of Georgia Tech, United States
+      	<tr><td><a>Misc. Minor Bug Fixes</a></td><td>Generous people worldwide
+      </tbody>
+    </table>
+    <p></p>
+  </article>
+
+  <article id="math">
+    <h2 class="article-title">Math</h2>
+    <p>
+      VisiLibity uses the C++ double type.  In this floating-point system, a
+      discrete string of bits represents a number from the continuum of real
+      numbers.  One indicator of how precisely a floating point system can
+      represent a real number is the <em>machine epsilon</em> (aka <em>machine
+      precision</em> or <em>unit roundoff</em>) defined as the difference
+      between 1 and the smallest exactly representable number greater than one.
+      In the IEEE 754 Standard for Binary Floating-Point Arithmetic, machine
+      epsilon for <em>double precision</em> on a 32-bit machine is
+      2<sup>-52</sup> (roughly 2.22x10<sup>-16</sup>). Despite this small value,
+      it is well known that the inexact nature of floating-point representation
+      can lead to many problems, e.g.,
+    </p>
+  	<ul>
+  	   <li>overflow, underflow, round-off error</li>
+  	   <li>divide by zero</li>
+  	   <li>complex values</li>
+  	   <li>loss of significance when subtracting nearly equal numbers</li>
+  	   <li>addition and multiplication are both commutative, but not necessarily associative</li>
+  	   <li>computational sequences that are analytically equal may produce different values</li>
+  	   <li>small errors can grow very large during an iterative process</li>
+  	   <li>evaluation of transcentental functions is approximate.</li>
+  	</ul>
+    <p>
+    	More details on problems associated with floating-point
+    	arithmetic can be found, e.g., in <a
+    	href="http://dlc.sun.com/pdf/800-7895/800-7895.pdf" target="_blank">"What
+    	Every Computer Scientist Should Know About Floating Point
+    	Arithmetic"</a>.
+    </p>
+    <p>
+    	So why use floating-point arithmetic?
+    	As <a href="http://cs.nyu.edu/cs/faculty/yap/" target="_blank">Chee
+    	K. Yap</a> wrote in the "Handbook of Discrete and Computational
+    	Geometry" (2nd Edition, p. 930),
+    </p>
+  	<blockquote>
+      <em>
+        "...fast floating-point hardware has become a de facto standard in
+        every computer. If we can make our geometric algorithms robust within
+        machine arithmetic, we are assured of the fastest possible
+        implementation..."
+    	</em>
+    </blockquote>
+    <p>
+    	To achieve robustness using floating-point arithmetic, VisiLibity
+    	operates using a technique called &epsilon;-geometry (AKA interval
+    	geometry) in which geometric primitives are fattened by very small
+    	amount &epsilon;.  This involves the use of <em>fuzzy comparisons</em> in
+    	which equality tests such as x==y are replaced by fabs(x-y) &#8804;
+    	&epsilon;.  When using VisiLibity, &epsilon; should typically be chosen
+    	somewhere between machine epsilon and the smallest dimension of any
+    	feature in the environment geometry at hand.
+    	<!--We are currenly working on more rigorous ways to choose &epsilon;
+    	values (as a function of input geometry) that guarantee performance.
+    	Results will be posted here as available.-->
+    </p>
+
+    <p>
+    	The algorithms and methods used in VisiLibity come mostly from these
+    	sources: <a href="./VisiLibity.bib"
+    	target="_blank"><code>VisiLibity.bib</code></a>
+    	(BibTeX file)
+
+    	<!--
+      interval geometry (fattening of primitives) + rounded geometry
+      (parameters of defining equations take on values in intervals)
+
+      The creation of thoroughly robust floating-point software is a delecate
+      undertaking requiring a good understanding of numerical analysis.
+
+      Plane line sweep
+      Radial Line Sweep
+      Simulation of Simplicity
+      -->
+    </p>
+  </article>
+
+  <article id="acknowledgements">
+    <h2 class="article-title">Acknowledgements</h2>
+    <p>
+      VisiLibity v1 was developed originally as part of research funded by NSF
+      award 0626457 and ARO award W911NF-05-1-0219.
+    </p>
+  </article>
+
+  <article id="license">
+    <h2 class="article-title">License</h2>
+    <p>
+      VisiLibity v1 is licensed under version 3 of the <a
+      href="http://www.gnu.org/licenses/" target="_blank">GNU Lesser General Public
+      License</a>.
+    </p>
+  	<!-- The images on- and screenshots pointed to by- this page
+  	are in the <a
+  	href="http://creativecommons.org/licenses/publicdomain/"
+  	target="_blank">PUBLIC DOMAIN</a>.<br> Images you produce with
+  	VisiLibity v1 are your property.<br> -->
+  </article>
+
+  <article id="links">
+    <h2 class="article-title">Links</h2>
+    <p>
+      Here are some other software packages you may find useful, though none
+      of these are officially associated with VisiLibity.
+    </p>
+    <p>
+      <a href="https://github.com/byronknoll/visibility-polygon-js" target="_blank">visibility-polygon-js: Visibility Polygons in JS</a><br>
+    	<a href="https://www.cgal.org/2013/07/31/wipVisibility/" target="_blank">CGAL Visibility Polygons</a><br>
+    	<a href="http://www.algorithmic-solutions.com/leda/index.htm" target="_blank">LEDA: Library of Efficient Data types and Algorithms</a>; <a href="http://www.mpi-inf.mpg.de/LEDA/friends/userproj/vispak.html" target="_blank">VISPAK: Visibility algorithms in LEDA</a><br>
+    	<a href="http://msl.cs.uiuc.edu/msl/" target="_blank">MSL: Motion Strategy Library</a><br>
+    	<a href="http://robotics.stanford.edu/~mitul/mpk/" target="_blank">MPK: Motion Planning Kit</a><br>
+    	<a href="http://ares.lids.mit.edu/software/RRT%28*%29.html" target="_blank">RRT/RRT* implementation in C</a><br>
+    	<a href="http://geometrylibrary.geodan.nl/" target="_blank">Generic Geometry Library (part of Boost)</a><br>
+    	<a href="http://www.cs.sunysb.edu/~algorith/major_section/1.6.shtml" target="_blank">Stony-Brook Algorithms Repository</a><br>
+    	<a href="http://www.math.cmu.edu/~arand/DIR3/" target="_blank">DIR3: Delaunay Incremental Refinement in 3D</a><br>
+    	<a href="http://www.ics.uci.edu/~eppstein/junkyard/" target="_blank">Goemetry Junkyard</a><br>
+    </p>
+  </article>
+
+  <footer>
+    <hr class="footer-hr">
+    <div class="copyright">
+      &copy;&nbsp;2008
+      <a href="https://karlobermeyer.github.io" target="_blank">Karl&nbsp;J. Obermeyer</a>
+    </div>
+  </footer>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4R13J4QH3E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4R13J4QH3E');
+  </script>
+</body>
+
+
+</html>

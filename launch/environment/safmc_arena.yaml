@@ -1,0 +1,582 @@
+environment:
+  obstacles: 
+    # room number 1
+    obs0:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.08
+      points: [
+        8.0, -3.0,
+        -0.0, -5.0, 
+        5.0, -0.0,
+        0.0, 3.0
+      ]
+    obs1:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.08
+      points: [
+        8.00, -2.0,
+        -0.0, 2.00,
+        0.5, 0.00
+      ]
+    obs2:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.50
+      points: [
+        12.75, -2.0,
+        -0.0, 2.25,
+        -3.5, 0.00
+      ]
+    # obs2:
+    #   use_key_point: true
+    #   height: [0.0, 0.5]
+    #   thickness: 0.25
+    #   points: [
+    #     8.0, -2.0,
+    #     -0.0, -1.0
+    #   ]
+    # obs3:
+    #   use_key_point: true
+    #   height: [1.5, 2.5]
+    #   thickness: 0.25
+    #   points: [
+    #     8.0, -2.0,
+    #     -0.0, -1.0
+    #   ]
+
+    # room number 2
+    obs4:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.08
+      points: [
+        8.0, -16.0,
+        -0.0, 5.0, 
+        5.0, -0.0,
+        0.0, -3.0
+      ]
+    obs5:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.08
+      points: [
+        8.00, -17.0,
+        -0.0, -2.00,
+        0.5, 0.00
+      ]
+    obs6:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.50
+      points: [
+        12.75, -17.0,
+        -0.0, -2.25,
+        -3.5, 0.00
+      ]
+    # obs6:
+    #   use_key_point: true
+    #   height: [0.0, 0.5]
+    #   thickness: 0.25
+    #   points: [
+    #     8.0, -18.0,
+    #     -0.0, 1.0
+    #   ]
+    # obs7:
+    #   use_key_point: true
+    #   height: [1.5, 2.5]
+    #   thickness: 0.25
+    #   points: [
+    #     8.0, -18.0,
+    #     -0.0, 1.0
+    #   ]
+    
+    # room number 3
+    obs8:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.08
+      points: [
+        17.0, -5.5,
+        -1.0, 0.0, 
+        0.0, -8.0,
+        1.0, -0.0
+      ]
+    obs9:
+      use_key_point: true
+      height: [0.0, 2.5]
+      thickness: 0.08
+      points: [
+        18.0, -5.5,
+        2.0, -0.0, 
+        0.0, -8.0,
+        -2.0, 0.0
+      ]
+
+# https://github.com/rgov/apriltag-pdfs
+april_tags:
+  # default is top-left
+  pair_position: [-0.1545, -0.1145, -0.1545, -0.2365]
+  # default is A3 paper size, A4 on each side
+  pair_paper_size: [0.297, 0.420]
+  tags:
+    # tag 000 to 011 are mounted to the start board 
+    # reserved
+    # corrugated board 1.22 * 2.455
+    id000 id001:
+      alignment: "top-left"
+      location: [4.78, -5.545]
+      purpose: relocalization
+    id002 id003:
+      alignment: "top-left"
+      location: [4.78, -6.7725]
+      purpose: relocalization
+    id004 id005:
+      alignment: "top-right"
+      location: [4.78, -8.01]
+      purpose: relocalization
+    id006 id007:
+      alignment: "bottom-left"
+      location: [6.00, -5.545]
+      purpose: relocalization
+    id008 id009:
+      alignment: "bottom-left"
+      location: [6.00, -6.7725]
+      purpose: relocalization
+    id010 id011:
+      alignment: "bottom-right"
+      location: [6.00, -8.01]
+      purpose: relocalization
+    
+    # (1) first room
+    # first row (outside)
+    id012 id013:
+      alignment: "top-right"
+      location: [7.50, -1.0]
+      purpose: relocalization
+    id014 id015:
+      alignment: "top-left"
+      location: [8.00, -2.00]
+      purpose: relocalization
+    id016 id017:
+      alignment: "top-left"
+      location: [8.00, -5.00]
+      purpose: relocalization
+    id018 id019:
+      alignment: "top-left"
+      location: [8.00, -8.00]
+      purpose: relocalization
+
+    # first room
+    # second row (inside)
+    id020 id021:
+      alignment: "bottom-left"
+      location: [8.00, 0.0]
+      purpose: relocalization
+    id022 id023:
+      alignment: "bottom-left"
+      location: [8.00, -2.00]
+      purpose: relocalization
+    id024 id025:
+      alignment: "bottom-left"
+      location: [8.00, -5.00]
+      purpose: relocalization
+    id026 id027:
+      alignment: "bottom-right"
+      location: [8.00, -8.00]
+      purpose: relocalization
+    
+    # first room
+    # third row (outside)
+    id028 id029:
+      alignment: "bottom-left"
+      location: [9.0, -8.0]
+      purpose: relocalization
+
+    # first room
+    # fourth row (inside)
+    id030 id031:
+      alignment: "bottom-left"
+      location: [10.00, 0.0]
+      purpose: relocalization
+    id032 id033:
+      alignment: "bottom-left"
+      location: [10.00, -4.00]
+      purpose: relocalization
+    id034 id035:
+      alignment: "bottom-right"
+      location: [10.00, -8.00]
+      purpose: relocalization
+    
+    # first room
+    # fifth row (outside)
+    id036 id037:
+      alignment: "top-left"
+      location: [12.00, -8.00]
+      purpose: relocalization
+
+    # first room
+    # sixth row (inside)
+    id038 id039:
+      alignment: "top-left"
+      location: [12.5, 0.0]
+      purpose: relocalization
+    id040 id041:
+      alignment: "top-left"
+      location: [12.5, -2.00]
+      purpose: relocalization
+    id042 id043:
+      alignment: "top-right"
+      location: [13.0, -5.0]
+      purpose: relocalization
+    id044 id045:
+      alignment: "top-right"
+      location: [13.0, -8.0]
+      purpose: relocalization
+    
+    # first room
+    # seventh row (outside)
+    id046 id047:
+      alignment: "bottom-left"
+      location: [13.0, 0.0]
+      purpose: relocalization
+    id048 id049:
+      alignment: "bottom-left"
+      location: [13.0, -2.00]
+      purpose: relocalization
+    id050 id051:
+      alignment: "bottom-right"
+      location: [13.0, -5.0]
+      purpose: relocalization
+    id052 id053:
+      alignment: "bottom-left"
+      location: [13.0, -8.0]
+      purpose: relocalization
+
+    # (2) second room
+    # first row (outside)
+    id054 id055:
+      alignment: "top-right"
+      location: [8.00, -11.0]
+      purpose: relocalization
+    id056 id057:
+      alignment: "top-right"
+      location: [8.00, -14.00]
+      purpose: relocalization
+    id060 id061:
+      alignment: "top-right"
+      location: [8.00, -17.00]
+      purpose: relocalization
+    id062 id063:
+      alignment: "top-left"
+      location: [7.5, -18.0]
+      purpose: relocalization
+
+    # second room
+    # second row (inside)
+    id064 id065:
+      alignment: "bottom-left"
+      location: [8.00, -11.00]
+      purpose: relocalization
+    id066 id067:
+      alignment: "bottom-right"
+      location: [8.00, -14.00]
+      purpose: relocalization
+    id068 id069:
+      alignment: "bottom-right"
+      location: [8.00, -17.00]
+      purpose: relocalization
+    id070 id071:
+      alignment: "bottom-right"
+      location: [8.00, -19.0]
+      purpose: relocalization
+    
+    # second room
+    # third row (outside)
+    id072 id073:
+      alignment: "bottom-right"
+      location: [9.00, -11.00]
+      purpose: relocalization
+
+    # second room
+    # fourth row (inside)
+    id074 id075:
+      alignment: "bottom-left"
+      location: [10.00, -11.00]
+      purpose: relocalization
+    id076 id077:
+      alignment: "bottom-right"
+      location: [10.00, -15.00]
+      purpose: relocalization
+    id078 id079:
+      alignment: "bottom-right"
+      location: [10.00, -19.0]
+      purpose: relocalization
+    
+    # second room
+    # fifth row (outside)
+    id080 id081:
+      alignment: "top-right"
+      location: [11.00, -12.00]
+      purpose: relocalization
+
+    # second room
+    # sixth row (inside)
+    id082 id083:
+      alignment: "top-left"
+      location: [13.0, -11.00]
+      purpose: relocalization
+    id084 id085:
+      alignment: "top-left"
+      location: [13.0, -14.00]
+      purpose: relocalization
+    id086 id087:
+      alignment: "top-right"
+      location: [12.5, -17.00]
+      purpose: relocalization
+    id088 id089:
+      alignment: "top-right"
+      location: [12.5, -19.0]
+      purpose: relocalization
+    
+    # second room
+    # seventh row (outside)
+    id090 id091:
+      alignment: "bottom-right"
+      location: [13.0, -11.0]
+      purpose: relocalization
+    id092 id093:
+      alignment: "bottom-left"
+      location: [13.0, -14.00]
+      purpose: relocalization
+    id094 id095:
+      alignment: "bottom-right"
+      location: [13.0, -17.00]
+      purpose: relocalization
+    id096 id097:
+      alignment: "bottom-right"
+      location: [13.0, -19.0]
+      purpose: relocalization
+
+    # (3) third room
+    # first row
+    # id098 id099:
+    #   alignment: "top-right"
+    #   location: [16.0, -5.5]
+    #   purpose: relocalization
+    
+    id098 id099:
+      alignment: "bottom-left"
+      location: [2.0, 0.6]
+      purpose: relocalization
+      
+    id100 id101:
+      alignment: "top-left"
+      location: [16.00, -13.5]
+      purpose: relocalization
+
+    # second row
+    id102 id103:
+      alignment: "bottom-left"
+      location: [16.00, -5.5]
+      purpose: relocalization
+    id104 id105:
+      alignment: "bottom-left"
+      location: [16.00, -9.50]
+      purpose: relocalization
+    id106 id107:
+      alignment: "bottom-right"
+      location: [16.00, -13.5]
+      purpose: relocalization
+    
+    # third row
+    id108 id109:
+      alignment: "top-right"
+      location: [18.00, -5.5]
+      purpose: relocalization
+    id110 id111:
+      alignment: "top-left"
+      location: [18.00, -5.5]
+      purpose: relocalization
+    id112 id113:
+      alignment: "top-right"
+      location: [18.00, -13.5]
+      purpose: relocalization
+    id114 id115:
+      alignment: "top-left"
+      location: [18.00, -13.5]
+      purpose: relocalization
+    
+    # fourth row
+    id116 id117:
+      alignment: "bottom-left"
+      location: [17.80, -9.5]
+      purpose: relocalization
+
+    # fifth row
+    id118 id119:
+      alignment: "top-right"
+      location: [20.0, -5.5]
+      purpose: relocalization
+    id120 id121:
+      alignment: "top-left"
+      location: [20.0, -5.5]
+      purpose: relocalization
+    id122 id123:
+      alignment: "top-left"
+      location: [20.0, -9.5]
+      purpose: relocalization
+    id124 id125:
+      alignment: "top-right"
+      location: [20.0, -13.5]
+      purpose: relocalization
+    id126 id127:
+      alignment: "top-left"
+      location: [20.0, -13.5]
+      purpose: relocalization
+
+    # (4) external 
+    # first row
+    id128 id129:
+      alignment: "top-left"
+      location: [14.5, -9.5]
+      purpose: relocalization
+
+    # second row
+    id130 id131:
+      alignment: "bottom-left"
+      location: [15.297, -0.00]
+      purpose: relocalization
+    id132 id133:
+      alignment: "bottom-left"
+      location: [15.297, -2.42]
+      purpose: relocalization
+    id134 id135:
+      alignment: "bottom-right"
+      location: [15.297, -16.58]
+      purpose: relocalization
+    id136 id137:
+      alignment: "bottom-right"
+      location: [15.297, -19.0]
+      purpose: relocalization
+    
+    # third row
+    id138 id139:
+      alignment: "top-left"
+      location: [17.703, -0.00]
+      purpose: relocalization
+    id140 id141:
+      alignment: "top-left"
+      location: [17.703, -2.42]
+      purpose: relocalization
+    id142 id143:
+      alignment: "top-right"
+      location: [17.703, -16.58]
+      purpose: relocalization
+    id144 id145:
+      alignment: "top-right"
+      location: [17.703, -19.0]
+      purpose: relocalization
+    
+    # fourth row
+    id146 id147:
+      alignment: "top-left"
+      location: [20.00, -0.00]
+      purpose: relocalization
+    id148 id149:
+      alignment: "top-left"
+      location: [20.00, -2.42]
+      purpose: relocalization
+    id150 id151:
+      alignment: "top-right"
+      location: [20.00, -16.58]
+      purpose: relocalization
+    id152 id153:
+      alignment: "top-right"
+      location: [20.00, -19.0]
+      purpose: relocalization
+
+    # (5) land
+    # first row
+    id154 id155:
+      alignment: "bottom-right"
+      location: [1.0, -11.00]
+      purpose: relocalization
+    id156 id157:
+      alignment: "bottom-right"
+      location: [1.0, -14.92]
+      purpose: relocalization
+    id158 id159:
+      alignment: "bottom-right"
+      location: [1.0, -18.00]
+      purpose: relocalization
+    
+    # second row
+    id160 id161:
+      alignment: "top-right"
+      location: [3.594, -11.0]
+      purpose: relocalization
+    id162 id163:
+      alignment: "top-right"
+      location: [3.594, -14.92]
+      purpose: relocalization
+    id164 id165:
+      alignment: "top-right"
+      location: [3.594, -18.0]
+      purpose: relocalization
+    
+    # third row
+    id166 id167:
+      alignment: "top-right"
+      location: [6.0, -11.0]
+      purpose: relocalization
+    id168 id169:
+      alignment: "top-right"
+      location: [6.0, -14.92]
+      purpose: relocalization
+    id170 id171:
+      alignment: "top-right"
+      location: [6.0, -18.0]
+      purpose: relocalization
+
+    id200:
+      # location: [10.0, -13.0]
+      location: [0.0]
+      purpose: eliminate
+    id201:
+      # location: [10.0, -3.0]
+      location: [0.0]
+      purpose: eliminate
+    id202:
+      # location: [9.0, -4.0]
+      location: [0.0]
+      purpose: eliminate
+    id203:
+      # location: [15.0, -10.0]
+      location: [0.0]
+      purpose: eliminate
+    id204:
+      # location: [14.0, -7.0]
+      location: [0.0]
+      purpose: eliminate
+    id205:
+      # location: [20.0, -4.0]
+      location: [0.0]
+      purpose: eliminate
+    id206:
+      # location: [10.0, -13.0]
+      location: [0.0]
+      purpose: eliminate
+    id207:
+      # location: [10.0, -3.0]
+      location: [0.0]
+      purpose: eliminate
+    id208:
+      # location: [9.0, -4.0]
+      location: [0.0]
+      purpose: eliminate
+    id209:
+      # location: [15.0, -10.0]
+      location: [0.0]
+      purpose: eliminate

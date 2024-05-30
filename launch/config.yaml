@@ -1,0 +1,62 @@
+# command_sequence index
+# [1] command:
+#   1. takeoff = Taking off sequence
+#   2. hold = Wait for certain time
+#   3. goto = Move to location
+#   4. goto_velocity = Move to location with velocity control
+#   5. external = Wait for external command
+#   6. land = Landing sequence
+# [2] to wait before the next command:
+#   1. conc = Go to the next command without waiting for this
+#   2. wait = Wait for this command
+# [3] drone number involved
+#   1. "all"
+#   2. "cfX" = split the cfs by underscore etc "cf1_cf2_cf3"
+# [4] duration (only applicable to hold) in ms, if nothing leave empty ""
+# [5] pose in XYZ "1 1 1", if nothing leave empty ""
+
+# command_sequence: [""]
+queue_size: 20
+# add in the environment file name here
+# environment_file: ""
+environment_file: "ICRA_expo.yaml"
+# environment_file: "hall.yaml"
+external_timeout: 5.0
+# 1 corrugated board: length(x) 1.22, width(y) 2.454,
+# together (2 corrugated board + A3): length(x) 2.737, width(y) 2.454
+offset_agents: [0.0, 0.0]
+# offset_agents: [-2.265, 0.0]
+# offset_agents: [4.632, -7.273]
+# obstacle_expansion_factor: 3.5
+obstacle_expansion_factor: 0.0
+concave_obstacles: true
+trajectory_parameters:
+  max_velocity: 0.1
+  maximum_yaw_change: 6.0
+  # maximum_yaw_change: 3.0
+  reached_threshold: 0.20
+  # takeoff_land_velocity: 0.6
+  takeoff_land_velocity: 0.2
+  # takeoff_height: 1.0
+  takeoff_height: 0.8
+  planning_rate: 8.0
+  communication_radius: 4.0
+  protected_zone: 0.20
+  planning_horizon_scale: 3.0
+  height_range: [0.5, 2.0]
+april_tag_parameters:
+  # 45 degs pointing downwards
+  camera_rotation: [ 0, 0.3826834, 0, 0.9238795 ] # x,y,z,w
+  time_threshold: 3.0
+  # time_threshold: 0.020
+  observation_threshold: 1.0
+  # observation_threshold: 1.82
+  # observation_threshold: 5.01
+  observation_limit: 1
+  is_z_out: true
+  center_origin: false
+sim:
+  hfov: 75.0 # deg
+  vfov: 50.0 # deg
+  observation:
+    clamp_distance: 1.82
