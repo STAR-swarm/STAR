@@ -1,0 +1,3 @@
+[submodule "crazyflie-link-cpp"]
+	path = crazyflie-link-cpp
+	url = git@bitbucket.org:nusuav/cfl_crazyflie-link-cpp.git

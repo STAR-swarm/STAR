@@ -1,0 +1,260 @@
+# named list of all robots
+robots:
+  # cf1:
+  #   enabled: true
+  #   uri: radio://*/80/2M/E7E7E7E701
+  #   initial_position: [1.40, -0.9, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.101
+  #   port: 5000
+  # cf2:
+  #   enabled: true
+  #   uri: radio://*/80/2M/E7E7E7E702
+  #   initial_position: [1.4, -1.3, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.102
+  #   port: 5000
+  # cf3:
+  #   enabled: true
+  #   uri: radio://*/80/2M/E7E7E7E703
+  #   initial_position: [1.4, -1.7, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.103
+  #   port: 5000
+  # cf4:
+  #   enabled: true
+  #   uri: radio://*/80/2M/E7E7E7E704
+  #   initial_position: [1.4, -2.1, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.104
+  #   port: 5000
+  # cf6:
+  #   enabled: true
+  #   uri: radio://*/60/2M/E7E7E7E706
+  #   initial_position: [0.9, -0.5, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.106
+  #   port: 5000
+  # cf7:
+  #   enabled: true
+  #   uri: radio://*/60/2M/E7E7E7E707
+  #   initial_position: [0.9, -0.9, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.107
+  #   port: 5000
+  # cf8:
+  #   enabled: true
+  #   uri: radio://*/120/2M/E7E7E7E708
+  #   initial_position: [0.9, -1.3, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.108
+  #   port: 5000
+  # cf9:
+  #   enabled: true
+  #   uri: radio://*/120/2M/E7E7E7E709
+  #   initial_position: [0.9, -1.7, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.109
+  #   port: 5000
+  # cf10:
+  #   enabled: true
+  #   uri: radio://*/120/2M/E7E7E7E710
+  #   initial_position: [0.9, -2.1, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.110
+  #   port: 5000
+
+  # cf11:
+  #   enabled: true
+  #   uri: radio://*/120/2M/E7E7E7E711
+  #   initial_position: [0.9, -2.5, 0.0]
+  #   # initial_position: [0.0, 0.0, 0]
+  #   initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+  #   type: cf21  # see robot_types
+  #   mission_capable: true
+  #   ip_add: 192.168.1.111
+  #   port: 5000
+  cf12:
+    enabled: true
+    # uri: radio://0/100/2M/E7E7E7E712
+    uri: radio://*/120/2M/E7E7E7E712
+    initial_position: [0.6, -0.8, 0.0]
+    # initial_position: [0.0, 0.0, 0]
+    initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+    type: cf21  # see robot_types
+    mission_capable: true
+    ip_add: 192.168.1.112
+    port: 5000
+  cf13:
+    enabled: true
+    # uri: radio://0/120/2M/E7E7E7E713
+    uri: radio://*/120/2M/E7E7E7E713
+    initial_position: [0.6, -2.40, 0.0]
+    # initial_position: [0.0, 0.0, 0]
+    initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+    type: cf21  # see robot_types
+    mission_capable: true
+    ip_add: 192.168.1.113
+    port: 5000
+  cf14:
+    enabled: true
+    uri: radio://*/60/2M/E7E7E7E714
+    initial_position: [0.4, -0.5, 0.0]
+    # initial_position: [0.0, 0.0, 0]
+    initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+    type: cf21  # see robot_types
+    mission_capable: true
+    ip_add: 192.168.1.114
+    port: 5000
+  cf15:
+    enabled: true
+    uri: radio://*/60/2M/E7E7E7E715
+    initial_position: [0.4, -2.2, 0.0]
+    # initial_position: [0.0, 0.0, 0]
+    initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+    type: cf21  # see robot_types
+    mission_capable: true
+    ip_add: 192.168.1.115
+    port: 5000
+  cf16:
+    enabled: true
+    uri: radio://*/60/2M/E7E7E7E716
+    initial_position: [1.5, -1.5, 0.0]
+    # initial_position: [0.0, 0.0, 0]
+    initial_quaternion: [0.0, 0.0, 0.0, 1.0]
+    type: cf21  # see robot_types
+    mission_capable: true
+    ip_add: 192.168.1.116
+    port: 5000
+
+    # firmware_params:
+    #   kalman:
+    #     pNAcc_xy: 1.0 # default 0.5
+    #firmware_logging:
+    #  custom_topics:
+    #    topic_name3:
+    #      frequency: 1
+    #      vars: ["acc.x", "acc.y", "acc.z"]
+# Definition of the various robot types
+robot_types:
+  cf21:
+    motion_capture:
+      enabled: false
+      # only if enabled; see motion_capture.yaml
+      marker: default_single_marker
+      dynamics: default
+    big_quad: false
+    battery:
+      voltage_warning: 3.8  # V
+      voltage_critical: 3.7 # V
+    # firmware_params:
+    #   kalman:
+    #     pNAcc_xy: 1.0 # default 0.5
+    # firmware_logging:
+    #   enabled: true
+    #   default_topics:
+    #     pose:
+    #       frequency: 1 # Hz
+    #   custom_topics:
+    #    topic_name3:
+    #      frequency: 1
+    #      vars: ["acc.x", "acc.y", "acc.z"]
+
+  cf21_mocap_deck:
+    motion_capture:
+      enabled: true
+      # only if enabled; see motion_capture.yaml
+      marker: mocap_deck
+      dynamics: default
+    big_quad: false
+    battery:
+      voltage_warning: 3.8  # V
+      voltage_critical: 3.7 # V
+
+    # firmware_params:
+    #   kalman:
+    #     pNAcc_xy: 1.0 # default 0.5
+
+# global settings for all robots
+all:
+  # firmware logging for all drones (use robot_types/type_name to set per type, or
+  # robots/drone_name to set per drone)
+  firmware_logging:
+    enabled: true
+    default_topics:
+     # remove to disable default topic
+      pose:
+        frequency: 8 # Hz
+      battery:
+        frequency: 1 # Hz
+    # custom_topics:
+    #  topic_name1:
+    #    frequency: 10 # Hz
+    #    vars: ["stateEstimateZ.x", "stateEstimateZ.y", "stateEstimateZ.z", "pm.vbat"]
+    #  topic_name2:
+    #    frequency: 1 # Hz
+    #    vars: ["stabilizer.roll", "stabilizer.pitch", "stabilizer.yaw"]
+  # firmware parameters for all drones (use robot_types/type_name to set per type, or
+  # robots/drone_name to set per drone)
+  firmware_params:
+    commander:
+      enHighLevel: 1
+    stabilizer:
+      estimator: 2 # 1: complementary, 2: kalman
+      controller: 1 # 1: PID, 2: mellinger
+    # ring:
+    #   effect: 16 # 6: double spinner, 7: solid color, 16: packetRate
+    #   solidBlue: 255 # if set to solid color
+    #   solidGreen: 0 # if set to solid color
+    #   solidRed: 0 # if set to solid color
+    #   headlightEnable: 0
+    locSrv:
+      # extPosStdDev: 1.1e-1
+      # extQuatStdDev: 5.0e-2
+      extPosStdDev: 5.0e-1
+      extQuatStdDev: 2.0e-1
+    kalman:
+      resetEstimation: 1
+      heightThreshold: 0.075
+      reboundThreshold: 0.35
+      heightLeniency: 3
+    #   pNAcc_xy: 0.02
+    #   pNVel: 0.02
+    #   mNGyro_rollpitch: 0.001
+    #   mNGyro_yaw: 0.001
+    velCtlPid:
+      vxKp: 18.0
+      vyKp: 18.0
+    motion:
+      adaptive: 1
+      flowStdFixed: 0.1
+  broadcasts:
+    num_repeats: 12 # number of times broadcast commands are repeated
+    delay_between_repeats_ms: 1 # delay in milliseconds between individual repeats
