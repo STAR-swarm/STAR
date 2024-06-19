@@ -1,6 +1,5 @@
-# Task Manager
-
-This is the task manager which provides a **path planning capabilites** to reach desired setpoints from the mission control, Landmark localisation is also available in this module as well as target tracking.
+# STAR
+STAR (Swarm Technology for Aerial Robotics Research) ia a framework developed explicitly to improve the accessibility of aerial swarm research experiments. Our framework introduces a swarm architecture based on the Crazyflie, a low-cost, open-source, palm-sized aerial platform, well suited for experimental swarm algorithms. To augment cost-effectiveness and mitigate the limitations of employing low-cost robots in experiments, we propose a landmark-based localization module leveraging fiducial markers. This module, also serving as a target detection module, enhances the adaptability and versatility of the framework. Additionally, collision and obstacle avoidance are implemented through velocity obstacles. The presented work strives to bridge the gap between theoretical advances and tangible implementations, thus fostering progress in the field.
 
 * This package was tested on `ROS-Galactic Ubuntu 20.04`.
 
