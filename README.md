@@ -14,7 +14,7 @@ The task manager supports simulation for sanity check of the configurations set.
 This module supports landmark-based localisation which correct the pose of the drone using fiducial markers.
 ![sample](media/relocalization.gif)
 
-## Obstacles simple polygon generation
+## Obstacles generation
 Developers has the options to develop polygon shapes to represent obstacles in the environment. The obstacle are used for virtusal collison avoidance and the safety buffer from the obstacles can be adjusted as well.
 | Perspective1 | Perspective2 |
 | :---: | :-----------: |
@@ -24,7 +24,7 @@ Developers has the options to develop polygon shapes to represent obstacles in t
 The task manager supports simulation for sanity check of the configurations set.
 ![sample](media/sample.gif)
 
-## Environment Setup and Compilation
+## Environment Setup
 1. Create workspace
 ```bash
 cd <to-your-preferred-directory>
