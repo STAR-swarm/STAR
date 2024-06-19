@@ -34,6 +34,7 @@ cd <to-your-preferred-directory>/STAR_ws/src
 
 # git clone these 6 repositories
 git clone git@github.com:STAR-swarm/STAR.git
+move all the repo within STAR to src
 git clone git@github.com:teamspatzenhirn/rviz_2d_overlay_plugins.git
 ```
 
