@@ -10,8 +10,8 @@ STAR ia a framework developed explicitly to improve the accessibility of aerial 
 The task manager supports simulation for sanity check of the configurations set.
 ![sample](media/sample.gif)
 
-## Landmark localisation
-This module supports landmark localisation which correct the pose of the drone using fiducial markers.
+## Landmark-based localisation
+This module supports landmark-based localisation which correct the pose of the drone using fiducial markers.
 ![sample](media/relocalization.gif)
 
 ## Obstacles simple polygon generation
@@ -123,7 +123,7 @@ ros2 launch crazyswarm_application mission.py # start mission
 ros2 launch crazyswarm_application rviz.py # visualization
 ```
 
-For real life application, to activate the `relocalization` portion of this repository, `apriltag_ros` will have to be activated, this can be seen in `app_w_april.py` under the `camera_node` and `tag_node`.
+For real life application, to activate the `landmark-based localisation` portion of this repository, `apriltag_ros` will have to be activated, this can be seen in `app_w_april.py` under the `camera_node` and `tag_node`.
 
 ### Mission Node
 The mission node will evaluate the mission files that are represented by the command sequence, and the following elaborates the mission structure and content
